@@ -1,9 +1,31 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <!-- Google tag (gtag.js) -->
+  <title>Tell me the last thing you forgot | Magic Susan</title>
+  <meta name="description" content="Magic Susan helps you stop forgetting everyday essentials. Share the last thing you forgot and join the early supporter list." />
+  <link rel="canonical" href="https://magicsusan.com/" />
+  <meta name="robots" content="index, follow" />
+
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Tell me the last thing you forgot | Magic Susan" />
+  <meta property="og:description" content="A simple interactive experience from Magic Susan that helps you remember everyday essentials." />
+  <meta property="og:url" content="https://magicsusan.com/" />
+  <meta property="og:image" content="https://magicsusan.com/og-image.png" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Tell me the last thing you forgot | Magic Susan" />
+  <meta name="twitter:description" content="A simple interactive experience from Magic Susan that helps you remember everyday essentials." />
+  <meta name="twitter:image" content="https://magicsusan.com/og-image.png" />
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23a855f7'/%3E%3Cstop offset='100%25' stop-color='%236b21a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23f0abfc' stroke-width='2' opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f0abfc' opacity='0.8'/%3E%3C/svg%3E">
+
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+  <meta name="theme-color" content="#f7f2e8" />
+
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-M0GK1MSZ90"></script>
   <script>
     window.dataLayer = window.dataLayer || [];
@@ -11,205 +33,488 @@
     gtag('js', new Date());
     gtag('config', 'G-M0GK1MSZ90');
   </script>
-  <title>Magic Susan by LabartCasa — Utility Patent-Pending Cognitive Furniture</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="MagicSusan by LabartCasa: utility patent-pending cognitive furniture that combines semantic retrieval and storage automation to learn your items and retrieve them when you ask.">
 
-  <!-- SEO Meta Tags -->
-  <meta name="keywords" content="MagicSusan, cognitive furniture, utility patent pending, voice furniture, smart home, LabartCasa, AI furniture, voice assistant, Hey Susan">
-  <meta name="author" content="LabartCasa Robotics">
-  <meta name="robots" content="index, follow">
-  <meta name="theme-color" content="#6b21a8">
-  <link rel="canonical" href="https://magicsusan.com/">
-
-  <!-- Open Graph -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://magicsusan.com/">
-  <meta property="og:title" content="MagicSusan — Cognitive Furniture That Responds When You Ask">
-  <meta property="og:description" content="By LabartCasa: utility patent-pending cognitive furniture that combines semantic retrieval and storage automation to learn your items. Say “Hey Susan, give me my wallet” and get it.">
-  <meta property="og:image" content="https://magicsusan.com/og-image.png">
-  <meta property="og:site_name" content="MagicSusan">
-  <meta property="og:locale" content="en_US">
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="MagicSusan — Cognitive Furniture That Responds When You Ask">
-  <meta name="twitter:description" content="By LabartCasa. Utility patent-pending cognitive furniture with semantic retrieval and storage automation. Hey Susan, give me my wallet.">
-
-  <!-- Favicon -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%23a855f7'/%3E%3Cstop offset='100%25' stop-color='%236b21a8'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='32' height='32' rx='6' fill='url(%23g)'/%3E%3Ccircle cx='16' cy='16' r='10' fill='none' stroke='%23f0abfc' stroke-width='2' opacity='0.9'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23f0abfc' opacity='0.8'/%3E%3C/svg%3E">
-
-  <!-- Structured Data: Product -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "MagicSusan",
-    "description": "Utility patent-pending cognitive furniture by LabartCasa that combines semantic retrieval and storage automation to retrieve items when you ask. Hey Susan, give me my wallet.",
-    "brand": { "@type": "Brand", "name": "LabartCasa Robotics" }
-  }
-  </script>
-  <!-- Structured Data: Organization -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "LabartCasa Robotics",
-    "url": "https://labartcasa.com",
-    "brand": {
-      "@type": "Brand",
-      "name": "Magic Susan"
+  <style>
+    :root{
+      --bg: #f7f2e8;
+      --panel: rgba(255,255,255,0.88);
+      --panel-strong: rgba(255,255,255,0.97);
+      --text: #1d1b17;
+      --muted: #756f62;
+      --line: #e6decf;
+      --bubble: #fbfaf7;
+      --user-bubble: #23201b;
+      --user-text: #f8f4ec;
+      --accent: #2d2923;
+      --shadow: 0 10px 30px rgba(67, 54, 32, 0.08);
+      --radius-xl: 28px;
+      --maxw: 760px;
     }
-  }
-  </script>
-  <!-- Structured Data: WebSite -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "WebSite",
-    "name": "Magic Susan",
-    "url": "https://magicsusan.com",
-    "description": "Magic Susan is a utility patent-pending cognitive furniture system from LabartCasa that combines semantic retrieval and storage automation.",
-    "potentialAction": {
-      "@type": "SubscribeAction",
-      "target": "https://magicsusan.com/#early-access"
-    }
-  }
-  </script>
 
-  <link rel="stylesheet" href="styles.css">
+    * { box-sizing: border-box; }
+
+    html, body {
+      margin: 0;
+      min-height: 100%;
+      background:
+        radial-gradient(circle at top left, rgba(255,255,255,0.45), transparent 28%),
+        radial-gradient(circle at bottom right, rgba(255,255,255,0.35), transparent 26%),
+        var(--bg);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body { padding: 28px 16px; }
+
+    .page {
+      max-width: var(--maxw);
+      margin: 0 auto;
+    }
+
+    .hero {
+      text-align: center;
+      margin-bottom: 22px;
+      padding-top: 8px;
+    }
+
+    .eyebrow {
+      margin: 0 0 10px;
+      font-size: 11px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    .headline {
+      margin: 0 auto 10px;
+      max-width: 13ch;
+      font-size: clamp(34px, 6vw, 56px);
+      line-height: 0.98;
+      letter-spacing: -0.05em;
+      font-weight: 680;
+      text-wrap: balance;
+    }
+
+    .subhead {
+      margin: 0 auto;
+      max-width: 30ch;
+      font-size: 18px;
+      line-height: 1.45;
+      color: var(--muted);
+      letter-spacing: -0.01em;
+      text-wrap: balance;
+    }
+
+    .chat-shell {
+      margin-top: 28px;
+      background: var(--panel);
+      border: 1px solid rgba(45, 41, 35, 0.07);
+      border-radius: var(--radius-xl);
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      backdrop-filter: blur(8px);
+    }
+
+    .chat-topbar {
+      height: 64px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 18px;
+      border-bottom: 1px solid var(--line);
+      background: rgba(255,255,255,0.58);
+    }
+
+    .avatar {
+      width: 38px;
+      height: 38px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: #f3ede1;
+      border: 1px solid rgba(45, 41, 35, 0.07);
+      flex: 0 0 auto;
+    }
+
+    .topbar-title {
+      display: flex;
+      flex-direction: column;
+      min-width: 0;
+    }
+
+    .topbar-title strong {
+      font-size: 15px;
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+    }
+
+    .topbar-title span {
+      font-size: 13px;
+      color: var(--muted);
+      line-height: 1.2;
+    }
+
+    .chat-body {
+      padding: 18px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.28), rgba(255,255,255,0.18));
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      min-height: 320px;
+    }
+
+    .row {
+      display: flex;
+      width: 100%;
+    }
+
+    .row.assistant { justify-content: flex-start; }
+    .row.user { justify-content: flex-end; }
+
+    .bubble {
+      max-width: min(84%, 560px);
+      border-radius: 24px;
+      padding: 14px 16px;
+      font-size: 17px;
+      line-height: 1.5;
+      letter-spacing: -0.01em;
+      word-break: break-word;
+      white-space: pre-wrap;
+    }
+
+    .assistant .bubble {
+      background: var(--bubble);
+      border: 1px solid rgba(45, 41, 35, 0.06);
+      border-top-left-radius: 10px;
+      box-shadow: 0 3px 10px rgba(66, 52, 32, 0.04);
+    }
+
+    .user .bubble {
+      background: var(--user-bubble);
+      color: var(--user-text);
+      border-top-right-radius: 10px;
+      box-shadow: 0 3px 10px rgba(20, 18, 14, 0.08);
+    }
+
+    .typing { min-height: 1.5em; }
+
+    .cursor {
+      display: inline-block;
+      width: 2px;
+      height: 1.05em;
+      background: currentColor;
+      vertical-align: -0.12em;
+      margin-left: 4px;
+      animation: blink 1s step-end infinite;
+      opacity: 0.9;
+    }
+
+    @keyframes blink {
+      50% { opacity: 0; }
+    }
+
+    .input-panel {
+      margin-top: 16px;
+      padding: 14px;
+      border-radius: 22px;
+      background: var(--panel-strong);
+      border: 1px solid var(--line);
+    }
+
+    .prompt-label {
+      margin: 0 0 8px;
+      font-size: 13px;
+      color: var(--muted);
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+
+    .composer {
+      display: flex;
+      gap: 10px;
+      align-items: flex-end;
+    }
+
+    textarea,
+    input[type="email"] {
+      width: 100%;
+      border: 1px solid transparent;
+      background: #fffdfa;
+      color: var(--text);
+      border-radius: 18px;
+      padding: 15px 16px;
+      font-size: 16px;
+      line-height: 1.45;
+      outline: none;
+      transition: border-color .18s ease, box-shadow .18s ease;
+      font-family: inherit;
+    }
+
+    textarea {
+      min-height: 56px;
+      max-height: 180px;
+      resize: vertical;
+    }
+
+    textarea:focus,
+    input[type="email"]:focus {
+      border-color: #cfc4af;
+      box-shadow: 0 0 0 4px rgba(207, 196, 175, 0.18);
+    }
+
+    .send {
+      border: none;
+      background: var(--accent);
+      color: #f7f2e8;
+      width: 50px;
+      height: 50px;
+      border-radius: 16px;
+      display: grid;
+      place-items: center;
+      cursor: pointer;
+      flex: 0 0 auto;
+      transition: transform .18s ease, opacity .18s ease;
+    }
+
+    .send:hover { transform: translateY(-1px); }
+    .send:disabled { opacity: 0.5; cursor: not-allowed; transform: none; }
+
+    .hidden { display: none !important; }
+
+    .helper {
+      margin-top: 10px;
+      font-size: 13px;
+      line-height: 1.45;
+      color: var(--muted);
+      padding-left: 2px;
+    }
+
+    .thanks {
+      margin-top: 16px;
+      background: #fffdfa;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      padding: 18px;
+      font-size: 18px;
+      line-height: 1.45;
+    }
+
+    .site-footer {
+      margin-top: 18px;
+      text-align: center;
+      font-size: 12px;
+      line-height: 1.6;
+      color: var(--muted);
+    }
+
+    .site-footer a {
+      color: inherit;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(117, 111, 98, 0.35);
+    }
+
+    .site-footer a:hover {
+      color: var(--text);
+      border-bottom-color: rgba(29, 27, 23, 0.4);
+    }
+
+    @media (max-width: 640px) {
+      body { padding: 16px 10px; }
+      .headline { font-size: clamp(30px, 10vw, 44px); }
+      .subhead { font-size: 17px; }
+      .chat-topbar { height: 58px; padding: 0 14px; }
+      .chat-body { padding: 12px; }
+      .messages { min-height: 300px; gap: 12px; }
+      .bubble {
+        max-width: 92%;
+        font-size: 16px;
+        padding: 12px 14px;
+      }
+      .composer { gap: 8px; }
+      .send { width: 46px; height: 46px; border-radius: 14px; }
+      .input-panel { padding: 12px; border-radius: 18px; }
+    }
+  </style>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
-
-  <header class="site-header" role="banner">
-    <div class="inner">
-      <div class="branding" aria-label="MagicSusan">
-        <span class="brand-mark">MagicSusan</span>
-        <span class="brand-subtitle">by <a href="https://labartcasa.com" target="_blank" rel="noopener">LabartCasa</a> · Cognitive Furniture</span>
-      </div>
-    </div>
-  </header>
-
-  <main id="main" class="page" role="main">
-    <section class="hero" aria-labelledby="hero-title">
-      <div class="inner">
-        <h1 id="hero-title">
-          Store it once. Ask for it later.
-        </h1>
-
-        <p class="lede">
-          Magic Susan is a utility patent-pending cognitive furniture system from LabartCasa. The invention combines semantic retrieval and storage automation, so Susan can understand what you ask for and retrieve the right physical item.
-        </p>
-
-        <p class="hero-support">
-          Say <strong>“Hey Susan, give me my wallet”</strong> or <strong>“Hey Susan, give me something sharp”</strong> — and get it.
-        </p>
-
-        <div class="hero-cta">
-          <a class="btn-primary" href="#early-access">Get early access</a>
-        </div>
-      </div>
+  <main class="page">
+    <section class="hero">
+      <p class="eyebrow">Magic Susan</p>
+      <h1 class="headline">Tell me the last thing you forgot.</h1>
+      <p class="subhead">I’ll make sure it never happens again.</p>
     </section>
 
-    <section id="susan-demo" class="section" aria-label="Susan demo">
-      <div class="inner">
-        <h2 class="visually-hidden">Try Susan</h2>
-        <div class="susan-demo-container" aria-label="MagicSusan: circular unit with door that opens to show items">
-          <div id="susan-scene" class="susan-scene">
-            <!-- Rendered by app.js: stretched circular unit, door, items, phrase -->
+    <section class="chat-shell">
+      <div class="chat-topbar">
+        <div class="avatar" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 64 64" fill="none">
+            <circle cx="32" cy="32" r="17" stroke="#27241f" stroke-width="2.2"/>
+            <path d="M22 32c3-3.2 6.4-4.8 10-4.8s7 1.6 10 4.8" stroke="#27241f" stroke-width="2.2" stroke-linecap="round"/>
+            <path d="M26.5 39.2c1.4 1.1 3.2 1.6 5.5 1.6s4.1-.5 5.5-1.6" stroke="#27241f" stroke-width="2" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div class="topbar-title">
+          <strong>Magic Susan</strong>
+          <span>Your helpful little reminder</span>
+        </div>
+      </div>
+
+      <div class="chat-body">
+        <div class="messages" id="messages">
+          <div class="row assistant">
+            <div class="bubble typing" id="typedBubble" aria-live="polite"></div>
+          </div>
+        </div>
+
+        <div class="input-panel">
+          <form class="story-form" id="storyForm">
+            <p class="prompt-label">Your answer</p>
+            <div class="composer">
+              <textarea id="storyInput" placeholder="Type what happened..." aria-label="Your answer"></textarea>
+              <button class="send" type="submit" aria-label="Send">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 20L20 12L4 4L6.5 10.5L14 12L6.5 13.5L4 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div class="helper">Press Enter to send.</div>
+          </form>
+
+          <form class="email-form hidden" id="emailForm" action="https://gmail.us7.list-manage.com/subscribe/post?u=99be4bc1b60d012427b53ad18&amp;id=8196196047&amp;f_id=00d0d1e4f0" method="post" target="_blank">
+            <p class="prompt-label">Your email</p>
+            <div class="composer">
+              <input name="EMAIL" id="emailInput" type="email" placeholder="Enter your email" aria-label="Email address" required />
+              <button class="send" type="submit" aria-label="Submit email">
+                <svg width="19" height="19" viewBox="0 0 24 24" fill="none">
+                  <path d="M4 20L20 12L4 4L6.5 10.5L14 12L6.5 13.5L4 20Z" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <div style="position:absolute; left:-5000px;" aria-hidden="true">
+              <input type="text" name="b_99be4bc1b60d012427b53ad18_8196196047" tabindex="-1" value="">
+            </div>
+            <div class="helper">Join the early supporter list.</div>
+          </form>
+
+          <div class="thanks hidden" id="thanks">
+            Thank you. You’re on the list.
           </div>
         </div>
       </div>
     </section>
 
-    <section id="how-it-works" class="section" aria-labelledby="how-heading">
-      <div class="inner">
-        <h2 id="how-heading">How it works</h2>
-
-        <p>
-          Place items inside. Susan learns each item using sensors and recognition. When you need something, just ask, and she gives you what you asked for.
-        </p>
-
-        <p>
-          Less searching, fewer “where did I put it?” moments, and faster daily routines.
-        </p>
-      </div>
-    </section>
-
-    <section id="use-cases" class="section" aria-labelledby="use-cases-heading">
-      <div class="inner">
-        <h2 id="use-cases-heading">Use cases</h2>
-
-        <ul class="use-cases" aria-label="Examples">
-          <li>Grab your keys and wallet on the way out.</li>
-          <li>In the kitchen: “Hey Susan, give me something sharp.”</li>
-          <li>Find the right cable without digging through a drawer.</li>
-          <li>Quick access to glasses, chargers, small tools, or meds.</li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="newsroom" class="section section-newsroom">
-      <div class="inner">
-        <h2 id="newsroom-heading">Newsroom</h2>
-        <p class="newsroom-intro">MagicSusan and LabartCasa in the press.</p>
-        <ul class="newsroom-list" aria-label="Press and articles">
-          <li>
-            <a href="https://theindustrytimes.com/when-furniture-starts-to-remember/" target="_blank" rel="noopener">When Furniture Starts to Remember</a>
-            <span class="newsroom-source">The Industry Times</span>
-          </li>
-          <li>
-            <a href="https://themanhattanherald.com/a-new-kind-of-furniture-is-learning-how-to-respond/" target="_blank" rel="noopener">A New Kind of Furniture Is Learning How to Respond</a>
-            <span class="newsroom-source">The Manhattan Herald</span>
-          </li>
-          <li>
-            <a href="https://davidmessi007.substack.com/p/a-new-kind-of-furniture-is-learning?r=555fw6&utm_campaign=post&utm_medium=web&triedRedirect=true" target="_blank" rel="noopener">A New Kind of Furniture Is Learning How to Respond</a>
-            <span class="newsroom-source">Substack</span>
-          </li>
-        </ul>
-      </div>
-    </section>
-
-    <section id="early-access" class="section section-accent">
-      <div class="inner">
-        <div id="mc_embed_shell">
-          <div id="mc_embed_signup">
-            <form action="https://gmail.us7.list-manage.com/subscribe/post?u=99be4bc1b60d012427b53ad18&amp;id=8196196047&amp;f_id=00d0d1e4f0" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank">
-              <div id="mc_embed_signup_scroll">
-                <h2>Join the early supporter list. Founding supporters vote on features.</h2>
-                <div class="indicates-required"><span class="asterisk">*</span> indicates required</div>
-                <div class="mc-field-group">
-                  <label for="mce-EMAIL">Email Address <span class="asterisk">*</span></label>
-                  <input type="email" name="EMAIL" class="required email" id="mce-EMAIL" required="" value="">
-                </div>
-                <div id="mce-responses" class="clear foot">
-                  <div class="response" id="mce-error-response" style="display: none;"></div>
-                  <div class="response" id="mce-success-response" style="display: none;"></div>
-                </div>
-                <div style="position: absolute; left: -5000px;" aria-hidden="true">
-                  <input type="text" name="b_99be4bc1b60d012427b53ad18_8196196047" tabindex="-1" value="">
-                </div>
-                <div class="optionalParent">
-                  <div class="clear foot">
-                    <input type="submit" name="subscribe" id="mc-embedded-subscribe" class="button" value="Get early access">
-                  </div>
-                </div>
-              </div>
-            </form>
-          </div>
-          <script type="text/javascript" src="//s3.amazonaws.com/downloads.mailchimp.com/js/mc-validate.js"></script>
-        </div>
-      </div>
-    </section>
+    <footer class="site-footer">
+      <div>© <span id="year"></span> LabartCasa Robotics · Magic Susan · Patent pending · <a href="#" id="contact-mail">Contact</a></div>
+    </footer>
   </main>
 
-  <footer class="site-footer" role="contentinfo">
-    <div class="inner">
-      <p>© <span id="year">2026</span> LabartCasa Robotics · MagicSusan · Patent pending · <a href="#" id="contact-mail" class="footer-contact" aria-label="Contact us by email">Contact</a></p>
-    </div>
-  </footer>
+  <script>
+    const firstQuestion = "Tell me a time when you forgot something and had to go back home?";
+    const followupMessage = "I have a solution for you, and I’ll make sure you never forget that again. Enter your email and get more info.";
 
-  <script src="app.js"></script>
+    const typedBubble = document.getElementById("typedBubble");
+    const messages = document.getElementById("messages");
+    const storyForm = document.getElementById("storyForm");
+    const storyInput = document.getElementById("storyInput");
+    const emailForm = document.getElementById("emailForm");
+    const emailInput = document.getElementById("emailInput");
+    const thanks = document.getElementById("thanks");
+
+    function wait(ms) {
+      return new Promise(resolve => setTimeout(resolve, ms));
+    }
+
+    async function typeIntoBubble(el, text, speed) {
+      el.innerHTML = "";
+      for (let i = 0; i < text.length; i++) {
+        el.innerHTML = text.slice(0, i + 1) + '<span class="cursor" aria-hidden="true"></span>';
+        await wait(speed || 24);
+      }
+      el.innerHTML = text;
+    }
+
+    function addUserMessage(text) {
+      const row = document.createElement("div");
+      row.className = "row user";
+      row.innerHTML = '<div class="bubble"></div>';
+      row.querySelector(".bubble").textContent = text;
+      messages.appendChild(row);
+      row.scrollIntoView({ behavior: "smooth", block: "end" });
+    }
+
+    function addAssistantBubble() {
+      const row = document.createElement("div");
+      row.className = "row assistant";
+      const bubble = document.createElement("div");
+      bubble.className = "bubble typing";
+      row.appendChild(bubble);
+      messages.appendChild(row);
+      row.scrollIntoView({ behavior: "smooth", block: "end" });
+      return bubble;
+    }
+
+    function setupContactMail() {
+      const link = document.getElementById("contact-mail");
+      link.addEventListener("click", function (e) {
+        e.preventDefault();
+        const user = "labartcasa" + "robotics";
+        const domain = "gmail" + "." + "com";
+        window.location.href = "mailto:" + user + "@" + domain;
+      });
+    }
+
+    storyInput.addEventListener("keydown", function (e) {
+      if (e.key === "Enter" && !e.shiftKey) {
+        e.preventDefault();
+        storyForm.requestSubmit();
+      }
+    });
+
+    storyForm.addEventListener("submit", async function (e) {
+      e.preventDefault();
+      const story = storyInput.value.trim();
+      if (!story) {
+        storyInput.focus();
+        return;
+      }
+
+      addUserMessage(story);
+      storyForm.classList.add("hidden");
+
+      const bubble = addAssistantBubble();
+      await typeIntoBubble(bubble, followupMessage, 19);
+
+      emailForm.classList.remove("hidden");
+      emailInput.focus();
+    });
+
+    emailForm.addEventListener("submit", function () {
+      if (!emailInput.checkValidity()) {
+        return;
+      }
+      setTimeout(function () {
+        emailForm.classList.add("hidden");
+        thanks.classList.remove("hidden");
+      }, 500);
+
+      if (typeof window.gtag === "function") {
+        gtag('event', 'email_submitted');
+      }
+    });
+
+    async function init() {
+      document.getElementById("year").textContent = new Date().getFullYear();
+      setupContactMail();
+      await typeIntoBubble(typedBubble, firstQuestion, 22);
+      storyInput.focus();
+    }
+
+    init();
+  </script>
 </body>
 </html>
