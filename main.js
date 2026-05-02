@@ -62,7 +62,8 @@ window.scrollToWaitlist = scrollToWaitlist;
 
 // ── Stripe VIP checkout ──
 // Replace with your LIVE Stripe Payment Link before launch.
-const STRIPE_VIP_CHECKOUT_URL = 'https://buy.stripe.com/test_8x27sL4rqgy14Lneyd33W00';
+const STRIPE_VIP_CHECKOUT_URL = 'https://buy.stripe.com/aFa4gy9p8aKLdLXbYo8N200';
+
 
 // ── Waitlist autofill + Mailchimp compatibility helpers ──
 (function () {
