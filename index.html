@@ -3,8 +3,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Magic Susan | Smart Entryway Organizer for Smart Homes</title>
-  <meta name="description" content="Magic Susan is a smart entryway organizer for smart homes. It keeps keys, wallet, badge, earbuds, and everyday carry by the door, then reminds your household before you leave." />
+  <title>Magic Susan | Secure Smart Entryway Organizer That Reminds You Before You Leave</title>
+  <meta name="description" content="Magic Susan is a secure smart entryway wall organizer that checks keys, wallet, badge, AirPods, gym fob, and daily essentials, then gives one simple reminder before you leave." />
   <meta name="keywords" content="entryway organizer, smart entryway organizer, smart home organizer, key organizer, wall organizer, entryway storage, daily carry organizer, home organization, Magic Susan" />
   <link rel="canonical" href="https://magicsusan.com/" />
   <meta name="robots" content="index, follow, max-image-preview:large" />
@@ -13,8 +13,8 @@
   <!-- Open Graph / Facebook / LinkedIn -->
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="Magic Susan" />
-  <meta property="og:title" content="Magic Susan | Smart Entryway Organizer for Smart Homes" />
-  <meta property="og:description" content="A smart home entryway organizer that keeps daily essentials by the door and gives calm reminders before your household leaves." />
+  <meta property="og:title" content="Magic Susan | Secure Smart Entryway Organizer" />
+  <meta property="og:description" content="A secure wall organizer that checks everyday essentials and reminds your household before leaving." />
   <meta property="og:url" content="https://magicsusan.com/" />
   <meta property="og:image" content="https://magicsusan.com/og-image.png" />
   <meta property="og:image:secure_url" content="https://magicsusan.com/og-image.png" />
@@ -45,8 +45,8 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
   
   <!-- Twitter / X -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Magic Susan | Smart Entryway Organizer for Smart Homes" />
-  <meta name="twitter:description" content="A smart home entryway organizer that keeps daily essentials by the door and reminds your household before leaving." />
+  <meta name="twitter:title" content="Magic Susan | Secure Smart Entryway Organizer" />
+  <meta name="twitter:description" content="A secure wall organizer that checks everyday essentials and reminds your household before leaving." />
   <meta name="twitter:image" content="https://magicsusan.com/og-image.png" />
   <meta name="twitter:image:alt" content="Magic Susan smart entryway organizer mounted by the door in a warm home entryway." />
 
@@ -75,7 +75,7 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
         "name": "Magic Susan Smart Entryway Organizer",
         "brand": { "@type": "Brand", "name": "Magic Susan" },
         "category": "Smart Home Entryway Organizer",
-        "description": "A smart entryway organizer that keeps keys, wallet, badge, earbuds, and everyday carry by the door, then reminds your household before you leave.",
+        "description": "A secure smart entryway wall organizer that checks keys, wallet, badge, AirPods, gym fob, and daily essentials, then gives one simple reminder before you leave.",
         "image": "https://magicsusan.com/og-image.png",
         "url": "https://magicsusan.com/",
         "offers": {
@@ -1432,15 +1432,61 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
     .green-led {
       position: absolute;
       z-index: 4;
-      top: 18%;
-      right: 30%;
+      top: 15%;
+      right: 32%;
       width: 0.85rem;
       height: 0.85rem;
       border-radius: 50%;
-      background: #48ff65;
+      background: #48ff65bf;
       box-shadow: 0 0 0 0.35rem rgba(72, 255, 101, 0.18), 0 0 1.4rem rgba(72, 255, 101, 0.9);
       opacity: 0;
       transition: opacity 220ms var(--ease-out);
+    }
+
+    /* Laser scan effect overlay */
+    .green-laser {
+      position: absolute;
+      z-index: 3;
+      /* Position the laser overlay only over the tray area at the bottom */
+         bottom: 35%;
+    left: 32.5%;
+    width: 50%;
+    height: 50%;
+      pointer-events: none;
+      /* Create a triangular scanning beam that emanates from the camera dot */
+      background: linear-gradient(to bottom, rgba(72, 255, 101, 0) 0%, rgba(72, 255, 101, 0.4) 50%, rgba(72, 255, 101, 0) 100%);
+      /* Clip the overlay into a downward triangle starting from the top center */
+      /* Align the triangular apex with the green LED camera dot (right: 30% => horizontal position ~70%).
+         Use a full-width base so the triangle scales consistently with the picture across different viewport sizes. */
+      clip-path: polygon(70% 0%, 0% 100%, 100% 100%);
+      mix-blend-mode: screen;
+      animation: laserScan 2.5s infinite linear;
+      opacity: 0;
+    }
+
+    @keyframes laserScan {
+      /* Keep the scanning effect static – only fade in and out within the triangular region */
+      0% {
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* Show laser during scanning steps */
+    .scan-stage[data-step="1"] .green-laser,
+    .scan-stage[data-step="2"] .green-laser,
+    .scan-stage[data-step="3"] .green-laser,
+    .scan-stage[data-step="4"] .green-laser,
+    .scan-stage[data-step="5"] .green-laser {
+      opacity: 1;
     }
 
     .scan-stage[data-step="1"] .green-led,
@@ -1487,11 +1533,11 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       border-style: dashed;
       background: rgba(224, 82, 67, 0.13);
     }
+    .bbox-face { top: 22%; right: 20%; width: 22%; height: 10%; }
+    .bbox-wallet { top: 53%; right: 41%; width: 17%; height: 10%; }
+    .bbox-keys {top: 35%; right: 19%; width: 32%; height: 18%; }
+    .bbox-badge { top: 56%; right: 15%; width: 13%; height: 12%; }
 
-    .bbox-face { top: 24%; right: 17%; width: 22%; height: 10%; }
-    .bbox-wallet { top: 56%; right: 43%; width: 17%; height: 8%; }
-    .bbox-keys { top: 42%; right: 12%; width: 34%; height: 14%; }
-    .bbox-badge { top: 62%; right: 15%; width: 13%; height: 13%; }
 
     .scan-stage[data-step="1"] .bbox-face,
     .scan-stage[data-step="2"] .bbox-wallet,
@@ -1505,12 +1551,6 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
     .scan-stage[data-step="5"] .bbox-badge {
       opacity: 1;
       transform: scale(1);
-    }
-
-    .scan-stage[data-step="4"] .scan-alert {
-      opacity: 0;
-      transform: translateY(0.75rem);
-      animation: none;
     }
 
     .scan-stage[data-step="4"] .scan-alert {
@@ -1773,7 +1813,7 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       min-height: inherit;
       border-radius: 0;
       object-fit: cover;
-      object-position: 72% center;
+      object-position: 100% center;
       background: transparent;
     }
 
@@ -1824,6 +1864,311 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       }
     }
 
+
+    /* Clarity/trust/FAQ additions */
+    .trust-strip {
+      padding-block: var(--space-5);
+      border-block: 1px solid color-mix(in srgb, var(--color-border) 72%, transparent);
+      background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+    }
+
+    .trust-strip-inner {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      color: var(--color-muted);
+      font-size: var(--text-sm);
+    }
+
+    .trust-strip-inner span {
+      padding: var(--space-3) var(--space-4);
+      border: 1px solid color-mix(in srgb, var(--color-border) 75%, transparent);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--color-bg) 58%, var(--color-surface));
+    }
+
+    .trust-strip-inner strong {
+      color: var(--color-text);
+    }
+
+    .privacy-note--expanded {
+      align-items: flex-start;
+    }
+
+    .privacy-note--expanded > div {
+      display: grid;
+      gap: var(--space-3);
+    }
+
+    .privacy-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: var(--space-2);
+      list-style: none;
+    }
+
+    .privacy-list li {
+      max-width: none;
+      padding: 0.35rem 0.62rem;
+      border-radius: 999px;
+      color: var(--color-text);
+      background: color-mix(in srgb, var(--color-bg) 70%, var(--color-surface));
+      font-size: var(--text-xs);
+      font-weight: 650;
+      /* Prevent wrapping to keep pills aligned */
+      white-space: nowrap;
+    }
+
+    .behind-scenes {
+      margin-top: var(--space-8);
+      padding: clamp(var(--space-6), 4vw, var(--space-8));
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-xl);
+      background: color-mix(in srgb, var(--color-surface) 72%, transparent);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .behind-scenes h3 {
+      margin-top: var(--space-4);
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      letter-spacing: -0.035em;
+    }
+
+    .behind-scenes p:last-child {
+      margin-top: var(--space-4);
+      color: var(--color-muted);
+      font-size: var(--text-lg);
+    }
+
+    .faq-section {
+      background: color-mix(in srgb, var(--color-surface) 48%, transparent);
+      border-top: 1px solid color-mix(in srgb, var(--color-border) 68%, transparent);
+    }
+
+    .faq-head {
+      max-width: 760px;
+      margin-bottom: var(--space-8);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+    }
+
+    .faq-item {
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--color-bg) 58%, var(--color-surface));
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item summary {
+      cursor: pointer;
+      color: var(--color-text);
+      font-weight: 750;
+      list-style-position: outside;
+    }
+
+    .faq-item p {
+      margin-top: var(--space-3);
+      color: var(--color-muted);
+      font-size: var(--text-sm);
+    }
+
+    @media (max-width: 920px) {
+      .trust-strip-inner,
+      .faq-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+
+    /* v2 clarity pass: cleaner FAQ + clearer VIP choice */
+    .faq-section {
+      background: linear-gradient(180deg,
+        color-mix(in srgb, var(--color-surface) 54%, transparent),
+        color-mix(in srgb, var(--color-bg) 78%, var(--color-surface))
+      );
+    }
+
+    .faq-head {
+      max-width: 720px;
+      margin-inline: auto;
+      text-align: center;
+    }
+
+    .faq-head .section-label {
+      justify-content: center;
+    }
+
+    .faq-grid {
+      width: min(100%, 900px);
+      margin-inline: auto;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-3);
+    }
+
+    .faq-item {
+      padding: 0;
+      overflow: hidden;
+      border: 1px solid color-mix(in srgb, var(--color-border) 82%, transparent);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
+      box-shadow: none;
+      transition: border-color var(--transition), box-shadow var(--transition), background var(--transition);
+    }
+
+    .faq-item[open] {
+      border-color: color-mix(in srgb, var(--color-brass) 45%, var(--color-border));
+      background: var(--color-surface);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .faq-item summary {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: var(--space-4);
+      padding: var(--space-5) var(--space-6);
+      cursor: pointer;
+      list-style: none;
+      color: var(--color-text);
+      font-size: var(--text-base);
+      font-weight: 720;
+    }
+
+    .faq-item summary::-webkit-details-marker { display: none; }
+
+    .faq-item summary::after {
+      content: "+";
+      display: grid;
+      width: 1.75rem;
+      height: 1.75rem;
+      flex: 0 0 auto;
+      place-items: center;
+      border: 1px solid var(--color-border);
+      border-radius: 999px;
+      color: var(--color-muted);
+      background: color-mix(in srgb, var(--color-bg) 58%, var(--color-surface));
+      font-weight: 500;
+    }
+
+    .faq-item[open] summary::after {
+      content: "–";
+      color: var(--color-text);
+      border-color: color-mix(in srgb, var(--color-brass) 50%, var(--color-border));
+    }
+
+    .faq-item p {
+      margin: 0;
+      padding: 0 var(--space-6) var(--space-6);
+      color: var(--color-muted);
+      font-size: var(--text-sm);
+      line-height: 1.65;
+    }
+
+    .reservation-options {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: var(--space-4);
+      margin: var(--space-6) 0 var(--space-6);
+    }
+
+    .reservation-card {
+      padding: var(--space-5);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      background: color-mix(in srgb, var(--color-surface) 82%, var(--color-bg));
+    }
+
+    .reservation-card--vip {
+      border-color: color-mix(in srgb, var(--color-brass) 60%, var(--color-border));
+      box-shadow: var(--shadow-sm);
+      background: color-mix(in srgb, var(--color-surface) 92%, var(--color-bg));
+    }
+
+    .reservation-card h3 {
+      font-family: var(--font-display);
+      font-size: var(--text-xl);
+      font-weight: 400;
+      letter-spacing: -0.03em;
+      margin-bottom: var(--space-2);
+    }
+
+    .reservation-price {
+      color: var(--color-muted);
+      font-size: var(--text-sm);
+      margin-bottom: var(--space-4);
+    }
+
+    .reservation-list {
+      display: grid;
+      gap: var(--space-2);
+      list-style: none;
+      color: var(--color-muted);
+      font-size: var(--text-sm);
+    }
+
+    .reservation-list li {
+      display: flex;
+      gap: var(--space-2);
+      max-width: none;
+    }
+
+    .reservation-list li::before {
+      content: "✓";
+      color: var(--color-success);
+      font-weight: 800;
+    }
+
+    .vip-upgrade {
+      border-color: color-mix(in srgb, var(--color-brass) 65%, var(--color-border));
+      background: color-mix(in srgb, var(--color-brass) 9%, var(--color-surface));
+    }
+
+    .vip-option {
+      align-items: flex-start;
+    }
+
+    .vip-option input[type="checkbox"] {
+      margin-top: 0.18rem;
+      width: 1.25rem;
+      height: 1.25rem;
+      accent-color: var(--color-primary);
+    }
+
+    .vip-title {
+      font-size: var(--text-base);
+    }
+
+    .vip-desc strong {
+      color: var(--color-text);
+      font-weight: 750;
+    }
+
+    .form-disclaimer {
+      max-width: none;
+    }
+
+    @media (max-width: 760px) {
+      .reservation-options {
+        grid-template-columns: 1fr;
+      }
+
+      .faq-head {
+        text-align: left;
+      }
+
+      .faq-head .section-label {
+        justify-content: flex-start;
+      }
+    }
+
   </style>
 </head>
 <body>
@@ -1832,7 +2177,7 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       <a class="nav-brand" href="#top" aria-label="Magic Susan home">Magic Susan</a>
 
       <nav class="nav-links" aria-label="Main navigation">
-        <a href="#problem">The problem</a>
+        <a href="#problem">Leave prepared</a>
         <a href="#household">Household intelligence</a>
         <a href="#finishes">Finishes</a>
         <a href="#waitlist">Reserve</a>
@@ -1854,11 +2199,12 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       <div class="container hero-grid">
         <div>
           <p class="eyebrow">Smart entryway organizer</p>
+          <!-- Restored original headline to emphasise the product greeting and reminder -->
           <h1>Greets you in.<br><em>Reminds you on the way out.</em></h1>
-          <p class="hero-lede">A calm wall organizer that remembers the small things at the door — keys, wallet, badge, AirPods — before your day gets messy.</p>
+          <p class="hero-lede">A secure wall organizer that remembers the small things at the door: keys, wallet, badge, AirPods. Before your day gets messy.</p>
           <div class="hero-actions">
             <button class="btn-primary" type="button" onclick="scrollToWaitlist()">Reserve yours</button>
-            <a class="btn-secondary" href="#household">See how it helps</a>
+            <a class="btn-secondary" href="#quick-scan">See how it helps</a>
           </div>
           <p class="hero-note">Free to reserve. Ships 2026.</p>
         </div>
@@ -1873,6 +2219,12 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       </div>
     </section>
 
+    <section class="trust-strip" aria-label="Privacy and launch details">
+      <div class="container trust-strip-inner">
+        <span><strong>Private by design.</strong> Recognition features are optional and configurable.</span>
+      </div>
+    </section>
+
     <section class="section problem" id="problem">
       <div class="container problem-grid">
         <div>
@@ -1881,12 +2233,14 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
           <div class="problem-lines">
             <p>Keys buried under mail. Sunglasses under yesterday's receipt.</p>
             <p>The door pat-down, the bag check, the split-second panic.</p>
-            <p>Then the turn back home for the forgotten badge.</p>
+			<p>Then the turn back home for the forgotten badge.</p>
+            <!-- Refocused copy to emphasize the problem rather than the product -->
+            <p>No more last-minute pat‑downs and panicked exits.</p>
           </div>
         </div>
         <figure class="problem-visual">
           <img src="assets/empty.png" alt="Entryway organizer problem moment: a person checks a bag at the front door before leaving home." loading="lazy" />
-          <figcaption class="problem-label">The moment you leave is exactly when you need one clear answer.</figcaption>
+          <figcaption class="problem-label">The moment you leave is when you need one clear answer: am I ready?</figcaption>
         </figure>
       </div>
     </section>
@@ -1899,8 +2253,8 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
             <h2 class="section-heading">More than a tray. It knows the moment.</h2>
           </div>
           <div class="household-copy">
-            <p class="section-lede">The reminder changes with the person, the time of day, and what each routine actually needs.</p>
-            <a class="btn-secondary" href="#quick-scan">See the leaving check</a>
+            <p class="section-lede">Magic Susan recognizes what you place inside, connects items to routines, and reminds you when something important is missing.</p>
+            <a class="btn-secondary" href="#quick-scan">See how it works</a>
           </div>
         </div>
 
@@ -1909,17 +2263,17 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
             <div>
               <span class="routine-label">Heading out</span>
               <h3>Good morning, Emma.</h3>
-              <p>School day means ID, earbuds, lunch, and keys. Magic Susan checks what is present before Emma reaches the door.</p>
+              <p>School day means student ID, earbuds, laptop, and keys. Magic Susan checks what is ready before the morning rush starts.</p>
               <div class="routine-chipline" aria-label="Emma tray items">
                 <span>student ID</span>
                 <span>earbuds</span>
-                <span>lunch card</span>
+                <span>class pass</span>
               </div>
             </div>
             <div class="routine-screen">
               <div class="routine-row">
                 <span class="routine-dot">E</span>
-                <span>Emma · off to school<small>Lunch packed · folder in bag</small></span>
+                <span>Emma · off to school<small>Laptop packed · folder in bag</small></span>
                 <span>7:42</span>
               </div>
               <div class="routine-row">
@@ -1937,8 +2291,8 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
 
           <article class="routine-card">
             <span class="routine-label">Gym day</span>
-            <h3>Rob has class at 8:30.</h3>
-            <p>The reminder changes for Rob: keys, earbuds, gym fob, and the bag by the door.</p>
+            <h3>Rob has gym at 8:30.</h3>
+            <p>For gym, the check is different: keys, earbuds, gym fob, and the bag by the door.</p>
             <div class="routine-screen">
               <div class="routine-row">
                 <span class="routine-dot">R</span>
@@ -1956,7 +2310,7 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
           <article class="routine-card">
             <span class="routine-label">Walking back in</span>
             <h3>Hey Lisa.</h3>
-            <p>At night, Magic Susan becomes a calm household status board: who is home, what is secure, and what is still out.</p>
+            <p>When someone comes home, Magic Susan can show who is home, what was placed back, and what still needs attention.</p>
             <div class="routine-screen">
               <div class="routine-row">
                 <span class="routine-dot">M</span>
@@ -1977,9 +2331,16 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
           </article>
         </div>
 
-        <div class="privacy-note" id="privacy">
+        <div class="privacy-note privacy-note--expanded" id="privacy">
           <span class="privacy-mark" aria-hidden="true">✓</span>
-          <p><strong>Secure by design.</strong> Faces recognized privately. Data stays yours.</p>
+          <div>
+            <p><strong>Private by design.</strong> Magic Susan is designed for the home. Personalization features are optional, privacy settings are configurable, and household data is built to stay secure.</p>
+            <ul class="privacy-list" aria-label="Privacy options">
+              <li>Person recognition optional.</li>
+              <li>Location features optional.</li>
+              <li>Visual reminders need no voice.</li>
+            </ul>
+          </div>
         </div>
       </div>
     </section>
@@ -1988,30 +2349,30 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       <div class="container scan-pin">
         <div class="scan-grid-layout">
           <div>
-            <p class="section-label">Door check</p>
-            <h2 class="section-heading">A quick scan before you go.</h2>
-            <p class="section-lede">It quietly checks what is in place, compares it with the moment, and shows one simple cue before you leave.</p>
+            <p class="section-label">How it works</p>
+            <h2 class="section-heading">A simple check before you go.</h2>
+            <p class="section-lede">Magic Susan recognizes what is in place, connects it to the routine for that moment, and shows one simple reminder before you leave.</p>
 
             <div class="scan-events" role="tablist" aria-label="Quick scan steps">
               <button class="scan-event is-active" type="button" data-scan-button="1" role="tab" aria-selected="true">
                 <strong>Step 1</strong>
-                <p>Magic Susan wakes as someone heads out.</p>
+                <p>You come home and place essentials by the door.</p>
               </button>
               <button class="scan-event" type="button" data-scan-button="2" role="tab" aria-selected="false">
                 <strong>Step 2</strong>
-                <p>Wallet is in place.</p>
+                <p>Magic Susan recognizes wallet, keys, badge, and earbuds.</p>
               </button>
               <button class="scan-event" type="button" data-scan-button="3" role="tab" aria-selected="false">
                 <strong>Step 3</strong>
-                <p>Keys are on the hook rail.</p>
+                <p>It connects items to routines like work, gym, or school.</p>
               </button>
               <button class="scan-event" type="button" data-scan-button="4" role="tab" aria-selected="false">
                 <strong>Step 4</strong>
-                <p>Today needs a badge too.</p>
+                <p>Before you leave, it checks what is missing.</p>
               </button>
               <button class="scan-event" type="button" data-scan-button="5" role="tab" aria-selected="false">
                 <strong>Step 5</strong>
-                <p>Amber cue: don't leave without it.</p>
+                <p>It shows one visual reminder, then Ready when complete.</p>
               </button>
             </div>
           </div>
@@ -2021,16 +2382,20 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
             <div class="scan-vignette" aria-hidden="true"></div>
             <div class="scan-grid-overlay" aria-hidden="true"></div>
             <div class="green-led" aria-hidden="true"></div>
+            <!-- Laser scan effect -->
+            <div class="green-laser" aria-hidden="true"></div>
             <div class="bbox bbox-ok bbox-face"><span>Hi Emma</span></div>
             <div class="bbox bbox-ok bbox-wallet"><span>✓ Wallet</span></div>
             <div class="bbox bbox-ok bbox-keys"><span>✓ Keys</span></div>
             <div class="bbox bbox-missing bbox-badge"><span>✗ Badge</span></div>
             <div class="scan-alert">
               <strong>Before you go</strong>
-              <p>Don't forget your wallet.</p>
+              <p>Missing badge.</p>
             </div>
           </figure>
         </div>
+
+        <!-- Behind-the-scenes content removed per latest feedback -->
       </div>
     </section>
 
@@ -2038,7 +2403,7 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       <div class="container">
         <p class="section-label">Available finishes</p>
         <h2 class="section-heading">Two finishes. Made to live in your home.</h2>
-        <p class="finishes-note">Choose your finish at checkout. Premium wood-grain finish over an engineered frame — designed to feel warm, quiet, and furniture-like by the door.</p>
+        <p class="finishes-note">Choose your finish at checkout. Premium wood-grain finish over an engineered frame, designed to feel warm, quiet and furniture-like by the door.</p>
 
         <div class="finish-switcher">
           <div class="finish-toggle" role="tablist" aria-label="Choose a finish">
@@ -2073,11 +2438,15 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       </div>
     </section>
 
+    <!-- FAQ section removed and will be inserted at the end of the page -->
+
     <section class="waitlist" id="waitlist">
       <div class="container-narrow waitlist-panel">
         <p class="section-label">Reserve your spot</p>
         <h2 class="waitlist-heading">Reserve your Magic Susan.</h2>
-        <p class="waitlist-sub">Free to reserve. We'll email you when Magic Susan goes live on Kickstarter.</p>
+        <p class="waitlist-sub">Choose a free reservation for launch updates, or select $1 VIP to guarantee the 47% early-bird discount before launch.</p>
+
+        <!-- Reservation option cards removed for cleaner layout -->
 
         <form class="waitlist-form" id="waitlist-form" autocomplete="on" action="https://gmail.us7.list-manage.com/subscribe/post?u=99be4bc1b60d012427b53ad18&amp;id=8196196047&amp;f_id=00c8d1e4f0" method="post" target="mailchimp-hidden-frame">
           <div class="form-row">
@@ -2107,8 +2476,8 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
               <input type="hidden" name="MMERGE7" id="vip-mailchimp-value" value="0" />
               <input type="checkbox" id="vip" value="1" />
               <span class="vip-copy">
-                <span class="vip-title">Go VIP for $1 <span class="vip-tag">Best offer</span></span>
-                <span class="vip-desc">VIP is the only way to lock in 47% off at launch ($199 instead of $379). Plus line-jump on launch day and your preferred finish reserved. $1 is fully refundable — anytime, no questions asked.</span>
+                <span class="vip-title">Go VIP for $1 <span class="vip-tag">Fully refundable</span></span>
+                <span class="vip-desc"><strong>VIP is the only way to guarantee the 47% early bird discount</strong>  ($199 instead of the planned $379 price). Tick this option to lock the discount, reserve your selected finish and get first access when Kickstarter opens. Leave it unchecked for a free reservation.</span>
               </span>
             </label>
           </div>
@@ -2118,7 +2487,7 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
           </div>
 
           <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn-primary btn-full">Reserve my spot</button>
-          <p class="form-disclaimer">Free reservation signs you up for launch updates. VIP is optional and fully refundable.</p>
+          <p class="form-disclaimer">Fully refundable.</p>
         </form>
 
         <iframe name="mailchimp-hidden-frame" title="Mailchimp signup" style="display:none; width:0; height:0; border:0;"></iframe>
@@ -2128,10 +2497,45 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
             <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3>You're on the list.</h3>
-          <p>We'll email you when Magic Susan goes live on Kickstarter. If you went VIP, your 47% off prelaunch price and preferred finish are locked in.</p>
+          <p>We'll email you when Magic Susan goes live on Kickstarter. If you upgraded to VIP, your guaranteed 47% early-bird discount, first-access spot, and preferred finish are locked in.</p>
         </div>
       </div>
     </section>
+
+    <!-- FAQ section moved to the end -->
+    <section class="section faq-section" id="faq">
+      <div class="container">
+        <div class="faq-head">
+          <h2 class="section-heading">Frequently asked questions</h2>
+          <p class="section-lede">Simple answers about how Magic Susan works, what VIP means, and how privacy is handled.</p>
+        </div>
+
+       <div class="faq-grid">
+ 
+<details class="faq-item" open>
+  <summary>What does Magic Susan actually do?</summary>
+  <p>It gives each household member one place for the essentials they carry every day: keys, badge, gym fob, whatever matters for that routine. Before you leave, it checks what is ready and shows one reminder if something is missing.</p>
+</details>
+
+<details class="faq-item">
+  <summary>What is the difference between free reservation and VIP?</summary>
+  <p>Free gets you launch updates. VIP is the only way to guarantee the 47% early-bird discount ($199 instead of $379), first access, and finish priority. Fully refundable.</p>
+</details>
+
+<details class="faq-item">
+  <summary>Does it work with multiple household members?</summary>
+  <p>Yes. Up to five members, each with their own items, routines, and reminder settings.</p>
+</details>
+
+<details class="faq-item">
+  <summary>Does it use a camera? What about privacy?</summary>
+  <p>Yes. Magic Susan uses a fusion of sensors including cameras to recognize items in the tray. The front-facing camera is optional and has a physical privacy cover. Internal sensors face only the tray. Person recognition and location features are optional; basic reminders work without them.</p>
+</details>
+
+</div>
+      </div>
+    </section>
+
   </main>
 
   <footer class="footer">
@@ -2141,7 +2545,8 @@ src="https://www.facebook.com/tr?id=821741833940683&ev=PageView&noscript=1"
       </div>
       <p class="footer-tagline">Peace of mind, right by the door.</p>
       <p class="footer-location">Ontario, Canada and California, USA.</p>
-      <p class="footer-copy">&copy; <span id="year"></span> Magic Susan &middot; Patent pending &middot; <a href="#" id="contact-mail">Contact</a></p>
+      <!-- Footer simplified to only mention patent status -->
+      <p class="footer-copy">&copy; <span id="year"></span> Magic Susan &middot; Patent pending &middot; <a href="mailto:labartcasarobotics@gmail.com?subject=Magic%20Susan%20question" id="contact-mail">Contact</a></p>
     </div>
   </footer>
 

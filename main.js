@@ -227,7 +227,7 @@ window.handleSubmit = handleSubmit;
 
   const defaultLabel = btn.textContent;
   vip.addEventListener('change', () => {
-    btn.textContent = vip.checked ? 'Reserve with VIP — $1' : defaultLabel;
+    btn.textContent = vip.checked ? 'Continue to $1 VIP checkout' : defaultLabel;
     btn.disabled = false;
     syncMailchimpFields(form);
   });
@@ -299,11 +299,10 @@ window.handleSubmit = handleSubmit;
 
   const contact = document.getElementById('contact-mail');
   if (contact) {
-    const user = 'labartcasarobotics';
-    const domain = 'gmail.com';
-    contact.addEventListener('click', (e) => {
-      e.preventDefault();
-      window.location.href = 'mailto:' + user + '@' + domain;
+    const email = 'labartcasarobotics@gmail.com';
+    contact.href = 'mailto:' + email + '?subject=Magic%20Susan%20question';
+    contact.addEventListener('click', () => {
+      contact.href = 'mailto:' + email + '?subject=Magic%20Susan%20question';
     });
   }
 })();
