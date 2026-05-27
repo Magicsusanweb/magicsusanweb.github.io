@@ -184,7 +184,7 @@ function handleSubmit(e) {
 
   if (isVip) {
     const params = new URLSearchParams();
-    if (email) params.set('prefilled_email', email);
+    if (email) params.set('locked_prefilled_email', email);
 
     const ref = [firstName, finish, 'vip']
       .filter(Boolean)
