@@ -106,7 +106,7 @@
           {
             "@type": "Question",
             "name": "What is the super early price for Magic Susan?",
-            "acceptedAnswer": { "@type": "Answer", "text": "The super early VIP price is $199 USD, which is 47% off the regular price of $379. A $1 VIP deposit locks in this price before the Kickstarter campaign opens. It is fully refundable before checkout." }
+            "acceptedAnswer": { "@type": "Answer", "text": "The super early VIP price is $199 USD, which is 47% off the regular price of $379. A $5 fully refundable deposit locks in this price before the Kickstarter campaign opens." }
           },
           {
             "@type": "Question",
@@ -1510,7 +1510,7 @@
             <button class="btn btn-primary" type="button" onclick="scrollToWaitlist()">Reserve yours</button>
             <a class="btn btn-secondary" href="#setup">See how it works</a>
           </div>
-          <p class="hero-note">Free to reserve · Patent pending</p>
+          <p class="hero-note">$5 refundable deposit · Patent pending</p>
         </div>
 
         <figure class="hero-visual" aria-label="Magic Susan mounted in a warm entryway">
@@ -1526,7 +1526,7 @@
       <div class="container trust-row reveal-stagger">
         <div class="trust-item"><span class="trust-k">World's first</span><span class="trust-v">Smart entryway organizer</span></div>
         <div class="trust-item"><span class="trust-k">Patent pending</span><span class="trust-v">Several patents filed</span></div>
-        <div class="trust-item"><span class="trust-k">Free to reserve</span><span class="trust-v">$1 VIP · locks super early price</span></div>
+        <div class="trust-item"><span class="trust-k">$5 VIP deposit</span><span class="trust-v">Fully refundable · locks super early price</span></div>
       </div>
     </section>
 
@@ -1808,8 +1808,8 @@
       <div class="waitlist-panel reveal">
         <p class="eyebrow">Calm mornings start here</p>
         <h2 class="waitlist-heading">Reserve your Magic Susan.</h2>
-        <p class="waitlist-sub">Choose a free reservation for launch updates, or select $1 VIP to guarantee the super early price ($199 USD) before the campaign opens.</p>
 
+        <!-- Stripe product: prod_UmoAGGFJuihrh1 -->
         <form class="waitlist-form" id="waitlist-form" autocomplete="on"
           action="https://gmail.us7.list-manage.com/subscribe/post?u=99be4bc1b60d012427b53ad18&id=8196196047&f_id=00c8d1e4f0"
           method="post" target="mailchimp-hidden-frame">
@@ -1837,15 +1837,13 @@
           </div>
 
           <div class="vip-upgrade">
-            <label class="vip-option">
-              <input type="hidden" name="MMERGE7" id="vip-mailchimp-value" value="0" />
-              <input type="checkbox" id="vip" value="1" />
-              <span class="vip-copy">
-                <span class="vip-title">Upgrade this reservation · $1 deposit <span class="vip-tag">Fully refundable</span></span>
-                <span class="vip-desc"><strong>47% off. The only way to lock the super early price of $199 USD (instead of $379), never offered again after launch.</strong> Reserves your finish and gives you first access the moment the Kickstarter opens.</span>
-              </span>
-            </label>
+            <span class="vip-copy">
+              <span class="vip-title">VIP Reservation · $5 deposit <span class="vip-tag">Fully refundable</span></span>
+              <span class="vip-desc"><strong>47% off. The only way to lock the super early price of $199 USD (instead of $379), never offered again after launch.</strong> Reserves your finish and gives you first access the moment the Kickstarter opens.</span>
+            </span>
           </div>
+
+          <input type="hidden" name="MMERGE7" id="vip-mailchimp-value" value="1" />
 
           <!-- Mailchimp bot trap -->
           <div aria-hidden="true" style="position:absolute;left:-5000px;">
@@ -1853,9 +1851,9 @@
           </div>
 
           <button type="submit" name="subscribe" id="mc-embedded-subscribe" class="btn btn-primary btn-full">
-            Reserve my spot
+            Deposit Now · $5
           </button>
-          <p class="form-disclaimer">No spam. Unsubscribe any time.</p>
+          <p class="form-disclaimer">Fully refundable, anytime. No spam. Unsubscribe any time.</p>
         </form>
 
         <iframe name="mailchimp-hidden-frame" title="Mailchimp signup" style="display:none;width:0;height:0;border:0;"></iframe>
@@ -1865,7 +1863,7 @@
             <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg>
           </div>
           <h3>You're on the list.</h3>
-          <p>We'll email you when Magic Susan goes live on Kickstarter. If you upgraded to VIP, your super early price, first-access spot, and preferred finish are locked in.</p>
+          <p>We'll email you when Magic Susan goes live on Kickstarter. Your super early price, first-access spot, and preferred finish are locked in.</p>
         </div>
       </div>
     </section>
@@ -1923,8 +1921,8 @@
           </details>
 
           <details class="faq-item">
-            <summary>Free reservation or VIP: what's the difference?</summary>
-            <p>A free reservation gets you launch updates the moment Susan goes live. The $1 VIP deposit is the only way to lock the $199 super early price (47% off, never offered again), hold your finish, and get first access. Fully refundable before checkout.</p>
+            <summary>Why a $5 deposit?</summary>
+            <p>The $5 VIP deposit is the only way to lock the $199 super early price (47% off, never offered again), hold your finish, and get first access. It's fully refundable, anytime, no questions asked.</p>
           </details>
 
           <details class="faq-item">
